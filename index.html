@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>nagy magia</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    textarea { width: 100%; height: 100px; margin-bottom: 1rem; }
+    input[type="text"] { width: 100%; font-family: monospace; padding: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Lillanak szeretettel</h1>
+  <textarea id="input" placeholder="eredeti"></textarea>
+  <button onclick="escapeForJSON()">lessgooooo</button>
+  <h2>ez talan jo lesz:</h2>
+  <input type="text" id="output" readonly>
+
+  <script>
+    function escapeForJSON() {
+      const input = document.getElementById("input").value;
+      const escaped = JSON.stringify(input);
+      const trimmed = escaped.slice(1, -1);
+      document.getElementById("output").value = trimmed;
+    }
+  </script>
+
+</body>
+</html>
